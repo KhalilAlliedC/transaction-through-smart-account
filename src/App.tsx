@@ -1,5 +1,5 @@
 import { ConnectButton, useActiveAccount, useActiveWalletChain } from "thirdweb/react";
-import { thirdWebClient } from "./config/thirdweb.config";
+import { currentChain, thirdWebClient } from "./config/thirdweb.config";
 import { useEffect } from "react";
 import TransferAssets from "./components/TransferAssets";
 import { getWalletProxy } from "./utils/walletproxy";
@@ -23,6 +23,7 @@ function App() {
 
         <ConnectButton
           client={thirdWebClient}
+          chain={currentChain}
         />
 
       </header>
